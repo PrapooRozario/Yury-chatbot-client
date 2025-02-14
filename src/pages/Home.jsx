@@ -11,7 +11,7 @@ export default function Home() {
     reset();
     try {
       const res = await axios.get(
-        `http://localhost:3000/prompt/${data?.prompt}`
+        `${import.meta.env.VITE_API_URL}/prompt/${data?.prompt}`
       );
       setAnswers([...answers, { answer: res?.data?.answer }]);
       setloading(false);
